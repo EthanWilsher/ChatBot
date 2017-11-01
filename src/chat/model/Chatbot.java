@@ -21,17 +21,47 @@ public class Chatbot
 	public Chatbot(String username)
 	{
 		this.movieList = null;
-		this.shoppingList = null;
+		this.shoppingList = new ArrayList<String>();
 		this.cuteAnimalMemes = null;
 		this.currentTime = null;
-		this.questions = null;
-		this.username = null;
+		this.questions = new String [10];
+		this.username = username;
 		this.content = null;
 		this.intro = null;
 		this.currentTime = null;
-		this.topics = null;
-		this.verbs = null;
-		this.followUps = null;
+		this.topics = new String [7];
+		this.verbs = new String [4];
+		this.followUps = new String [5];
+		
+		buildVerbs();
+		buildTopics();
+		buildFollowups();
+		buildQuestions();
+		buildShoppingList();
+	}
+	
+	private void buildVerbs()
+	{
+		verbs[0] = "like";
+		verbs[1] = "dislike";
+		verbs[2] = "am ambivalent about";
+		verbs[3] = "am thinking about";
+	}
+	
+	private void buildTopics()
+	{
+		topics[0] = "School";
+		topics[1] = "Cooking";
+		topics[2] = "Baking";
+		topics[3] = "Cars";
+		topics[4] = "Video Games";
+		topics[5] = "TV Shows";
+		topics[6] = "Sports";
+	}
+	
+	private void buildFollowups()
+	{
+	
 	}
 
 	private void buildMovieList()
