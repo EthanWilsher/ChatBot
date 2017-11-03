@@ -115,6 +115,8 @@ public class Chatbot
 		random = (int) (Math.random() * questions.length);
 		response += questions[random];
 		
+		return response;
+		
 		
 	}
 	

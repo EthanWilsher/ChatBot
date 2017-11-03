@@ -30,7 +30,7 @@ public class Movie
 
 	public String getGenre()
 	{
-		this.genre = "@@@@@@@";
+		
 		return genre;
 	}
 
@@ -61,22 +61,27 @@ public class Movie
 
 	public void setTitle(String title)
 	{
+		this.title = title;
 	}
 
 	public void setGenre(String genre)
 	{
+		this.genre = genre;
 	}
 
 	public void setRatingMPAA(String ratingMPAA)
 	{
+		this.ratingMPAA = ratingMPAA;
 	}
 
 	public void setReview(String review)
 	{
+		this.review = review;
 	}
 
 	public void setLength(int length)
 	{
+		this.length = length;
 	}
 
 	public void setReleaseDate(LocalDate releaseDate)
@@ -85,6 +90,7 @@ public class Movie
 
 	public void setStarScore(double starScore)
 	{
+		this.starScore = starScore;
 	}
 	
 	public String toString()
