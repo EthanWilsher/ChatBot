@@ -81,12 +81,41 @@ public class Chatbot
 	
 	private void buildQuestions()
 	{
-		
+		questions[0] = "How was your day?";
+		questions[1] = "What did you eat for breakfast?";
+		questions[2] = "What did you eat for lunch?";
+		questions[3] = "What did you eat for dinner?";
+		questions[4] = "What's your favorite soda?";
+		questions[5] = "What's your favorite candy bar?";
+		questions[6] = "How is your school going?";
+		questions[7] = "Where was your last vacation?";
+		questions[8] = "Who is your favorite actor?";
+		questions[9] = "What color are your pants?";
 	}
 	
 	public String processConversation(String input)
 	{
-		return null;
+		String chatbotResponse = "";
+		chatbotResponse += "You said: " + "\n" + input + "\n";
+		chatbotResponse += buildChatbotResponse();
+		
+		return chatbotResponse;
+	}
+	
+	private String buildChatbotResponse()
+	{
+		String response = "I";
+		int random = (int) (Math.random() * verbs.length);
+		
+		response += verbs[random];
+		
+		random = (int) (Math.random() * topics.length);
+		response += " " + topics[random] + ".\n";
+		
+		random = (int) (Math.random() * questions.length);
+		response += questions[random];
+		
+		
 	}
 	
 	public boolean lengthChecker(String input)
