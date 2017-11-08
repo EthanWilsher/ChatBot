@@ -14,13 +14,13 @@ public class Movie
 	
 	public Movie(String title)
 	{
-		this.title = "";
-		this.genre = "";
-		this.ratingMPAA = "";
-		this.review = "";
-		this.length = 0;
+		this.title = "Title: " + title;
+		this.genre = "Horror";
+		this.ratingMPAA = "PG-13";
+		this.review = "This is the best movie of 2017";
+		this.length = 120;
 		this.releaseDate = null;
-		this.starScore = 0.0;
+		this.starScore = 9.99;
 	}
 
 	public String getTitle()
@@ -86,6 +86,7 @@ public class Movie
 
 	public void setReleaseDate(LocalDate releaseDate)
 	{
+		this.releaseDate = releaseDate;
 	}
 
 	public void setStarScore(double starScore)
