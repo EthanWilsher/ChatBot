@@ -96,6 +96,12 @@ public class Chatbot
 		questions[9] = "What color are your pants?";
 	}
 
+	/**
+	 * The process conversation method takes the users input and runs it through a bunch of checkers to figure out what it should send back.
+	 * @param input The users supplied text.  
+	 * @return THe user then receives a string made from their input and other code.
+	 */
+	
 	public String processConversation(String input)
 	{
 		String chatbotResponse = "";
@@ -105,6 +111,11 @@ public class Chatbot
 		return chatbotResponse;
 	}
 
+	/**
+	 * Builds a random response using the chatbot's sentence part arrays.
+	 * @return Returns a random response of the chatbot.
+	 */
+	
 	private String buildChatbotResponse()
 	{
 		String response = "I";
@@ -151,6 +162,13 @@ public class Chatbot
 		return false;
 	}
 
+	/**
+	 * Checks if the user typed something that relates to the checker.
+	 * @param input The users response to what animal meme is cute.
+	 * @return The response returns true if the response worked with the checker.
+	 */
+	
+	
 	public boolean cuteAnimalMemeChecker(String input)
 	{
 		int index = 0;
@@ -167,6 +185,7 @@ public class Chatbot
 		return false;
 	}
 
+	
 	public boolean shoppingListChecker(String shoppingItem)
 	{
 		int index = 0;
