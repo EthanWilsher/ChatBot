@@ -12,23 +12,41 @@ import javax.swing.JButton;
 public class ChatPanel extends JPanel
 {
 	private ChatbotController appController;
-//	private JPanel panel;
-	private JTextArea responseArea;
-	private JTextField input;
-	private JButton button;
-	private SpringLayout layout;
+
+	private JTextArea chatArea;
+	private JTextField inputField;
+	private JButton chatButton;
+	private SpringLayout appLayout;
 	
 	public ChatPanel(ChatbotController appController)
 	{
 		super();
 		this.appController = appController;
-//		panel = new JPanel();
-//		responseArea = new JTextArea();
-//		input = new JTextField();
-//		layout = new SpringLayout();
-//		button = new JButton();
-//				
+//		Initialize GUI data members
+		chatArea = new JTextArea(10, 15);
+		inputField = new JTextField(20);
+		appLayout = new SpringLayout();
+		chatButton = new JButton("chat");
+		
+		setupPanel();
+		setupLayout();
+		setupListeners();
 	}
 	
-
+	private void setupPanel()
+	{
+		
+	}
+	
+	private void setupLayout()
+	{
+		
+	}
+	
+	private void setupListeners()
+	{
+		
+	}
+	
+	
 }
