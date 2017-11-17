@@ -18,14 +18,18 @@ public class ChatbotController
 	{
 		String response = display.collectResponse("What do you want to talk about?");
 		
-		while (chatbot.lengthChecker(response) && !chatbot.quitChecker(response))
-		{
-			response = popupChat(response);
-			response = display.collectResponse(response);
-		}
+//		while (chatbot.lengthChecker(response) && !chatbot.quitChecker(response))
+//		{
+//			response = popupChat(response);
+//			response = display.collectResponse(response);
+//		}
 	}
 	
-	
+	/**
+	 * This method gets the users input then uses process conversation to make a string to return.
+	 * @param chat is the text that is also getting returned.
+	 * @return This method then returns a valid value 
+	 */
 	
 	private String popupChat(String chat)
 	{
