@@ -12,8 +12,9 @@ import java.awt.event.ActionListener;
 
 /**
  * The JPanel subclass for the chatbot project.
+ * 
  * @author ewil1026
- * @version 21/11/17 
+ * @version 21/11/17
  */
 public class ChatPanel extends JPanel
 {
@@ -34,7 +35,6 @@ public class ChatPanel extends JPanel
 		appLayout = new SpringLayout();
 		chatButton = new JButton("chat");
 		checkerButton = new JButton("Checker");
-		
 
 		setupPanel();
 		setupLayout();
@@ -77,6 +77,19 @@ public class ChatPanel extends JPanel
 				String displayText = appController.interactWithChatbot(userText);
 				chatArea.append(displayText);
 				inputField.setText("");
+			}
+
+		});
+
+		checkerButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				String userText = inputField.getText();
+				String displayText = appController.useCheckers(userText);
+				chatArea.append(displayText);
+				inputField.setText("");
+
 			}
 
 		});

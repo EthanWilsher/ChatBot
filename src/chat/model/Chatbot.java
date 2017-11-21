@@ -61,17 +61,29 @@ public class Chatbot
 
 	private void buildFollowups()
 	{
+		followUps[0] = " That's Pretty Cool";
+		followUps[1] = " That's Nice";
+		followUps[2] = " Sicked Wicked";
+		followUps[3] = " That's Memeing bro!";
+		followUps[4] = " YEAH! JUST DAB ON THEM HATERS *dab*";
+		
 
 	}
 
 	private void buildMovieList()
 	{
-
+		movieList.add(new Movie("Spiderman"));
+		movieList.add(new Movie("Hidden Figures"));
+		movieList.add(new Movie("Lazer Team"));
+		movieList.add(new Movie("THE EMOJI MOVIE!"));
+		movieList.add(new Movie("Justice League"));
 	}
 
 	private void buildShoppingList()
 	{
-
+		shoppingList.add("protien");
+		shoppingList.add("veggies");
+		shoppingList.add("snacks");
 	}
 
 	private void buildCuteAnimal()
