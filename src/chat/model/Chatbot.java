@@ -66,7 +66,6 @@ public class Chatbot
 		followUps[2] = " Sicked Wicked";
 		followUps[3] = " That's Memeing bro!";
 		followUps[4] = " YEAH! JUST DAB ON THEM HATERS *dab*";
-		
 
 	}
 
@@ -91,7 +90,7 @@ public class Chatbot
 		cuteAnimalMemes.add("otter");
 		cuteAnimalMemes.add("pupper");
 		cuteAnimalMemes.add("kittie");
-		
+
 	}
 
 	private void buildQuestions()
@@ -109,11 +108,14 @@ public class Chatbot
 	}
 
 	/**
-	 * The process conversation method takes the users input and runs it through a bunch of checkers to figure out what it should send back.
-	 * @param input The users supplied text.  
+	 * The process conversation method takes the users input and runs it through a bunch of checkers to
+	 * figure out what it should send back.
+	 * 
+	 * @param input
+	 *            The users supplied text.
 	 * @return THe user then receives a string made from their input and other code.
 	 */
-	
+
 	public String processConversation(String input)
 	{
 		String chatbotResponse = "";
@@ -125,9 +127,10 @@ public class Chatbot
 
 	/**
 	 * Builds a random response using the chatbot's sentence part arrays.
+	 * 
 	 * @return Returns a random response of the chatbot.
 	 */
-	
+
 	private String buildChatbotResponse()
 	{
 		String response = "I";
@@ -140,15 +143,32 @@ public class Chatbot
 
 		random = (int) (Math.random() * questions.length);
 		response += questions[random];
-		
+
 		random = (int) (Math.random() * 2);
 		if (random % 2 == 0)
 		{
 			random = (int) (Math.random() * movieList.size());
 			response += "\n" + movieList.get(random).getTitle() + " is not as good as The Emoji Movie.";
 		}
-		
-		
+
+		int followup = (int) (Math.random() * 5);
+
+		switch (followup)
+		{
+		case 0:
+			response += followUps[0] + "\n";
+			break;
+		case 3:
+			response += followUps[1] + "\n";
+		case 1:
+			response += followUps[2] + "\n";
+			break;
+		default:
+			response += followUps[3] + "\n";
+			response += followUps[4] + "\n";
+			break;
+
+		}
 
 		return response;
 
@@ -176,11 +196,12 @@ public class Chatbot
 
 	/**
 	 * Checks if the user typed something that relates to the checker.
-	 * @param input The users response to what animal meme is cute.
+	 * 
+	 * @param input
+	 *            The users response to what animal meme is cute.
 	 * @return The response returns true if the response worked with the checker.
 	 */
-	
-	
+
 	public boolean cuteAnimalMemeChecker(String input)
 	{
 		int index = 0;
@@ -197,7 +218,6 @@ public class Chatbot
 		return false;
 	}
 
-	
 	public boolean shoppingListChecker(String shoppingItem)
 	{
 		int index = 0;
