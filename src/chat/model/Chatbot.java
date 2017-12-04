@@ -176,12 +176,52 @@ public class Chatbot
 
 	public boolean lengthChecker(String input)
 	{
-		return false;
+		boolean validLength = false;
+		
+		if (input != null && input.length() > 2)
+		{
+			validLength = true;
+		}
+		
+		return validLength;
 	}
 
 	public boolean htmlTagChecker(String input)
 	{
-		return false;
+		boolean containsHTML = false;
+		if(input == null || !input.contains("<"))
+		{
+			return containsHTML;
+		}
+		int firstOpen = input.indexOf("<");
+		int firstClose = input.indexOf(">",firstOpen);
+		int secondOpen = -9;
+		int secondClose = -9;
+		String tagText = "";
+		//checks for bad tags
+		if (input.contains("<>") || input.indexOf("< >") > -1)
+		{
+			containsHTML = false;
+		}
+		//checks singleton
+		if(input.toUpperCase().contains("<P>") || input.toLowerCase().contains("<br>"))
+		{
+			containsHTML = true;
+		}
+		//checks others
+		else if(firstClose > firstOpen)
+		{
+			
+			//others
+			tagText = input.substring(firstOpen + 1, firstClose).toLowerCase();
+			secondOpen = input.toLowerCase().indexOf("</" + tagText, firstClose);	
+			
+			
+			
+		}
+		
+		
+		
 	}
 
 	public boolean userNameChecker(String input)
