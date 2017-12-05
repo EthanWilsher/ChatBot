@@ -40,6 +40,8 @@ public class ChatbotController
 		return chatbotSays;
 	}
 	
+	
+	
 	public String interactWithChatbot (String input)
 	{
 		String chatbotSays = "";
@@ -91,6 +93,11 @@ public class ChatbotController
 		return response;
 		
 	}
+	
+	
+	
+		
+	
 	
 	private void close()
 	{
