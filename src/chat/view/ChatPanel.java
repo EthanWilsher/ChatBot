@@ -117,5 +117,11 @@ public class ChatPanel extends JPanel
 
 		});
 	}
+	
+	
+	
+	
+	
+	
 
 }

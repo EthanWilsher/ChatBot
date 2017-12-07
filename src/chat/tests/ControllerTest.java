@@ -15,6 +15,7 @@ public class ControllerTest
 {
 	private ChatbotController testedController;
 	
+	
 	@Before
 	public void setUp() throws Exception
 	{
@@ -66,7 +67,7 @@ public class ControllerTest
 	public void testGetChatFrame()
 	{
 		assertNotNull("ChatFrame must be initialized.", testedController.getChatFrame());
-		assertTrue("Chatframe needs to be returned", testedController.getChatFrame() instanceof ChatFrame);
+		assertTrue("ChatFrame needs to be returned", testedController.getChatFrame() instanceof ChatFrame);
 	}
 
 }

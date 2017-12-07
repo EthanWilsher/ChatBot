@@ -1,6 +1,6 @@
 package chat.controller;
 
-import chat.model.Chatbot;
+import chat.model.*;
 import chat.view.*;
 
 
@@ -31,14 +31,7 @@ public class ChatbotController
 	 * @return This method then returns a valid value 
 	 */
 	
-	private String popupChat(String chat)
-	{
-		String chatbotSays = ""; //Assigns a valid value to a variable that will be returned for the method.
-		
-		chatbotSays += chatbot.processConversation(chat);
-		
-		return chatbotSays;
-	}
+	
 	
 	
 	
@@ -67,27 +60,27 @@ public class ChatbotController
 		}
 		if(chatbot.cuteAnimalMemeChecker(text))
 		{
-			response += "";
+			response += "This matches the cute memes\n";
 		}
 		if(chatbot.shoppingListChecker(text))
 		{
-			response += "";
+			response += "this matched the things on my shopping list\n";
 		}
 		if(chatbot.movieTitleChecker(text))
 		{
-			response += "";
+			response += "this matches the movies i was thinking\n";
 		}
 		if(chatbot.movieGenreChecker(text))
 		{
-			response += "";
+			response += "the genre of these movies matches\n";
 		}
 		if(chatbot.htmlTagChecker(text))
 		{
-			response += "";
+			response += " this matches the html tag needed\n";
 		}
 		if(chatbot.userNameChecker(text))
 		{
-			response += "";
+			response += "This is a good username\n";
 		}
 		//continue with all checkers except length and quick checker
 		return response;
@@ -105,8 +98,18 @@ public class ChatbotController
 		System.exit(0);
 	}
 	
+	private String popupChat(String chat)
+	{
+		String chatbotSays = ""; //Assigns a valid value to a variable that will be returned for the method.
+		
+		chatbotSays += chatbot.processConversation(chat);
+		
+		return chatbotSays;
+	}
+
 	public Chatbot getChatbot()
 	{
+		
 		return chatbot;
 	}
 	
@@ -114,6 +117,14 @@ public class ChatbotController
 	{
 		return display;
 	}
+
+	
+	
+	
+	
+	
+	
+	
 	
 	
 

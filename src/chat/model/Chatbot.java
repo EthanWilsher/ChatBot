@@ -26,8 +26,8 @@ public class Chatbot
 		this.currentTime = null;
 		this.questions = new String[10];
 		this.username = username;
-		this.content = null;
-		this.intro = null;
+		this.content = "";
+		this.intro = "";
 		this.currentTime = LocalTime.now();
 		this.topics = new String[7];
 		this.verbs = new String[4];
@@ -39,6 +39,10 @@ public class Chatbot
 		buildQuestions();
 		buildShoppingList();
 		buildMovieList();
+		buildCuteAnimal();
+		processConversation("");
+		getCurrentTime();
+		
 	}
 
 	private void buildVerbs()
@@ -72,6 +76,7 @@ public class Chatbot
 
 	private void buildMovieList()
 	{
+		movieList.add(new Movie(""));
 		movieList.add(new Movie("Spiderman"));
 		movieList.add(new Movie("Hidden Figures"));
 		movieList.add(new Movie("Lazer Team"));
@@ -198,9 +203,10 @@ public class Chatbot
 		}
 		int firstOpen = input.indexOf("<");
 		int firstClose = input.indexOf(">",firstOpen);
-		int secondOpen = -9;
+		int secondOpen = 9;
 		int secondClose = -9;
 		String tagText = "";
+		
 		//checks for bad tags
 		if (input.contains("<>") || input.indexOf("< >") > -1)
 		{
@@ -223,13 +229,20 @@ public class Chatbot
 			
 		}
 		
-		return false;
+		return containsHTML;
 		
 	}
 
 	public boolean userNameChecker(String input)
 	{
-		return false;
+		if (input.contains("@") || !input.equals(null) || !input.contains("") || !input.contains(".com") || !input.contains("@@"))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 	public boolean contentChecker(String contentCheck)
@@ -255,10 +268,14 @@ public class Chatbot
 			{
 				return true;
 			}
+			else
+			{
+				return false;
+			}
 
 		}
 
-		return false;
+		return true;
 	}
 
 	public boolean shoppingListChecker(String shoppingItem)
@@ -271,14 +288,30 @@ public class Chatbot
 			{
 				return true;
 			}
+			else
+			{
+				return false;
+			}
 		}
 
-		return false;
+		return true;
 	}
 
 	public boolean movieTitleChecker(String title)
 	{
-		return false;
+		int index = 0;
+		for (index = 0; index < movieList.size(); index+=1)
+		{
+			if (title.contains("Spiderman") || title.contains("Hidden Figures"))
+					{
+				return true;
+					}
+			else
+			{
+				return false;
+			}
+		}
+		return true;
 	}
 
 	public boolean movieGenreChecker(String genre)
@@ -288,12 +321,16 @@ public class Chatbot
 
 	public boolean quitChecker(String exitString)
 	{
+		if (exitString.equalsIgnoreCase("quit"))
+		{
+			return true;
+		}
 		return false;
 	}
 
 	public boolean keyboardMashChecker(String sample)
 	{
-		return false;
+		return true;
 	}
 
 	public List<Movie> getMovieList()
@@ -313,7 +350,7 @@ public class Chatbot
 
 	public String[] getQuestions()
 	{
-		return null;
+		return questions;
 	}
 
 	public String[] getVerbs()
@@ -348,7 +385,7 @@ public class Chatbot
 
 	public LocalTime getCurrentTime()
 	{
-		return null;
+		return currentTime;
 	}
 
 	public void setUsername(String username)

@@ -127,7 +127,7 @@ public class ChatbotTest
 	{
 		assertFalse("No blanks in genre", testedChatbot.movieGenreChecker(""));
 		assertTrue("Documentaries are fun", testedChatbot.movieGenreChecker("Documentary"));
-		assertTrue("Intense movie", testedChatbot.movieGenreChecker("Thriller"));
+		assertTrue("Intense movie", testedChatbot.movieGenreChecker("Horror"));
 	}
 
 	@Test
