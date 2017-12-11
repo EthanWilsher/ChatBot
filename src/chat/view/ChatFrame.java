@@ -10,6 +10,10 @@ public class ChatFrame extends JFrame
 	private ChatbotController appController;
 	private ChatPanel appPanel;
 	
+	/**
+	 * This establishes the controller and allows the program to call for setupFrame and do all the parent methods programming.
+	 * @param appController
+	 */
 	public ChatFrame(ChatbotController appController)
 	{
 		super();
@@ -19,6 +23,9 @@ public class ChatFrame extends JFrame
 		
 	}
 	
+	/**
+	 * this method is used to set up the information for the frame.
+	 */
 	private void setupFrame()
 	{
 		this.setSize(500, 500);

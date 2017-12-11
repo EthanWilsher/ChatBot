@@ -3,7 +3,11 @@ package chat.model;
 import java.util.List;
 import java.time.LocalTime;
 import java.util.ArrayList;
-
+/**
+ * these show that there are strings and lists.
+ * @author ewil1026
+ *
+ */
 public class Chatbot
 {
 	private List<Movie> movieList;
@@ -17,7 +21,10 @@ public class Chatbot
 	private String content;
 	private String intro;
 	private LocalTime currentTime;
-
+/**
+ * this method is used to call all build methods and setting up new strings and lists.
+ * @param username
+ */
 	public Chatbot(String username)
 	{
 		this.movieList = new ArrayList<Movie>();
@@ -44,7 +51,9 @@ public class Chatbot
 		getCurrentTime();
 		
 	}
-
+/**
+ * these all build lists of strings
+ */
 	private void buildVerbs()
 	{
 		verbs[0] = "like";
@@ -181,7 +190,11 @@ public class Chatbot
 		return response;
 
 	}
-
+/**
+ * These are a bunch of checkers that see's if something is right or wrong.
+ * @param input
+ * @return these return true or false things because they check if what goes through works or not.
+ */
 	public boolean lengthChecker(String input)
 	{
 		boolean validLength = false;
@@ -333,6 +346,10 @@ public class Chatbot
 		return true;
 	}
 
+	/**
+	 * these are all getters
+	 * @return these return the name of the checker
+	 */
 	public List<Movie> getMovieList()
 	{
 		return movieList;

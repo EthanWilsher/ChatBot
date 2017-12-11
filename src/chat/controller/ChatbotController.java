@@ -3,7 +3,6 @@ package chat.controller;
 import chat.model.*;
 import chat.view.*;
 
-
 public class ChatbotController
 {
 	private PopupDisplay display;
@@ -21,20 +20,12 @@ public class ChatbotController
 	public void start()
 	{
 		display.displayText("Welcome to Chatbot");
-		
-
 	}
-	
 	/**
 	 * This method gets the users input then uses process conversation to make a string to return.
 	 * @param chat is the text that is also getting returned.
 	 * @return This method then returns a valid value 
 	 */
-	
-	
-	
-	
-	
 	public String interactWithChatbot (String input)
 	{
 		String chatbotSays = "";
@@ -86,11 +77,6 @@ public class ChatbotController
 		return response;
 		
 	}
-	
-	
-	
-		
-	
 	
 	private void close()
 	{

@@ -2,6 +2,11 @@ package chat.model;
 
 import java.time.LocalDate;
 
+/**
+ * these methods set up the movie settings.
+ * @author ewil1026
+ *
+ */
 public class Movie
 {
 	private String title;

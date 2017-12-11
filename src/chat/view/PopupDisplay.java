@@ -8,9 +8,12 @@ public class PopupDisplay
 	private ImageIcon icon;
 	private String windowTitle;
 	
+	/**
+	 * these methods set up the pop up that shows at the beginning of the chat bot.
+	 */
 	public PopupDisplay()
 	{
-		icon = new ImageIcon(getClass().getResource("images/chatbotPPAltTwo.png"));
+		icon = new ImageIcon(getClass().getResource("images/Mr t.png"));
 		windowTitle = "ChatBot says...";
 	}
 	public void displayText(String message)
