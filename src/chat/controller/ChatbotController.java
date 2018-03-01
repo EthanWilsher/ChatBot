@@ -14,7 +14,7 @@ public class ChatbotController
 	public ChatbotController()
 	{
 		chatbot = new Chatbot("Ethan Wilsher");
-		myTwitter = newCTECTwitter(this);
+		myTwitter = new CTECTwitter(this);
 		//View initialized after Model
 		display = new PopupDisplay();
 		appFrame = new ChatFrame(this);
@@ -114,6 +114,7 @@ public class ChatbotController
 
 	public void tweet(String text)
 	{
+		myTwitter.sendTweet(text);
 		
 	}
 	

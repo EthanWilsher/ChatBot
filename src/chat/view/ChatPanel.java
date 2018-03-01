@@ -41,11 +41,13 @@ public class ChatPanel extends JPanel
 		loadButton = new JButton("load", new ImageIcon(getClass().getResource("/chat/view/images/LoadIcon.png")));
 		saveButton = new JButton("save", new ImageIcon(getClass().getResource("/chat/view/images/SaveIcon.png")));
 		tweetButton = new JButton("tweet", new ImageIcon(getClass().getResource("/chat/view/images/TwitterIcon.png")));
+		
 		searchButton = new JButton("search", new ImageIcon(getClass().getResource("/chat/view/images/SearchIcon.png")));
 		checkerButton = new JButton("Checker");
 		
 		//init the scroll pane
 		chatScrollPane = new JScrollPane();
+		appLayout.putConstraint(SpringLayout.NORTH, tweetButton, 40, SpringLayout.SOUTH, chatScrollPane);
 		appLayout.putConstraint(SpringLayout.NORTH, loadButton, 19, SpringLayout.SOUTH, chatScrollPane);
 		
 		//call new helper method
@@ -84,6 +86,9 @@ public class ChatPanel extends JPanel
 
 	private void setupLayout()
 	{
+		appLayout.putConstraint(SpringLayout.WEST, tweetButton, 10, SpringLayout.WEST, this);
+		appLayout.putConstraint(SpringLayout.SOUTH, tweetButton, -3, SpringLayout.SOUTH, infoLabel);
+		appLayout.putConstraint(SpringLayout.EAST, tweetButton, -6, SpringLayout.WEST, loadButton);
 		appLayout.putConstraint(SpringLayout.SOUTH, checkerButton, -7, SpringLayout.SOUTH, this);
 		appLayout.putConstraint(SpringLayout.NORTH, inputField, 0, SpringLayout.NORTH, checkerButton);
 		appLayout.putConstraint(SpringLayout.EAST, inputField, -4, SpringLayout.WEST, checkerButton);
@@ -91,9 +96,6 @@ public class ChatPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.EAST, checkerButton, -10, SpringLayout.EAST, this);
 		appLayout.putConstraint(SpringLayout.NORTH, searchButton, -3, SpringLayout.NORTH, chatButton);
 		appLayout.putConstraint(SpringLayout.EAST, searchButton, 0, SpringLayout.EAST, this);
-		appLayout.putConstraint(SpringLayout.NORTH, tweetButton, -1, SpringLayout.NORTH, loadButton);
-		appLayout.putConstraint(SpringLayout.WEST, tweetButton, 224, SpringLayout.WEST, this);
-		appLayout.putConstraint(SpringLayout.EAST, tweetButton, -26, SpringLayout.WEST, saveButton);
 		appLayout.putConstraint(SpringLayout.NORTH, saveButton, -3, SpringLayout.NORTH, chatButton);
 		appLayout.putConstraint(SpringLayout.EAST, saveButton, -21, SpringLayout.WEST, chatButton);
 		appLayout.putConstraint(SpringLayout.WEST, loadButton, 0, SpringLayout.WEST, inputField);
@@ -137,7 +139,7 @@ public class ChatPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				
+				appController.tweet(inputField.getText());
 
 			}
 
