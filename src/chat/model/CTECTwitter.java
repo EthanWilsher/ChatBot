@@ -42,6 +42,8 @@ public class CTECTwitter
 	{
 		String mostCommon = "";
 		
+		collectTweets(username);
+		
 		return mostCommon;
 	}
 	
@@ -74,6 +76,20 @@ public class CTECTwitter
 			}
 			page++;
 		}
+	}
+	
+	private void turnStatusesToWords()
+	{
+		for(Status currentStatus : searchedTweets)
+		{
+			String tweetText = currentStatus.getText();
+			String [] tweetedWords = tweetText.split(" ");
+			for(int index = 0; index < tweetedWords.length; index++)
+			{
+				tweetedWords.add(removePunctuation(tweetedWords[index]).trim());
+			}
+		}
+		
 	}
 
 }
