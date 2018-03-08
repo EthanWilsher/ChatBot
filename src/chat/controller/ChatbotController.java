@@ -50,7 +50,7 @@ public class ChatbotController
 		
 		if(chatbot.contentChecker(text))
 		{
-			response += "THis text matches the special content\n";
+			response += "This text matches the special content\n";
 		}
 		if(chatbot.cuteAnimalMemeChecker(text))
 		{

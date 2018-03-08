@@ -48,8 +48,27 @@ public class CTECTwitter
 		
 		collectTweets(username);
 		turnStatusesToWords();
+		totalWordCount = tweetedWords.size();
+		String [] boring = createIgnoredWordArray();
+		trimTheBoringWords(boring);
 		
 		return mostCommon;
+	}
+	
+	private void trimTheBoringWords(String [] boringWords)
+	{
+		for (int index = tweetedWords.size() - 1; index >= 0; index--)
+		{
+			for (int boringIndex = 0; boringIndex < boringWords.length; boringIndex++)
+			{
+				if (tweetedWords.get(index).equals(boringWords[boringIndex]))
+				{
+					tweetedWords.remove(index);
+					boringIndex = Integer.MAX_VALUE;
+				}
+			}
+		}
+		
 	}
 	
 	private void collectTweets(String username)
@@ -116,7 +135,7 @@ public class CTECTwitter
 	private String [] createIgnoredWordArray()
 	{
 		String [] boringWords;
-		String fileText = IOController.loadFromFile(appController, "commonWords.txt")
+		String fileText = IOController.loadFromFile(appController, "commonWords.txt");
 		int wordCount = 0;
 		
 		Scanner wordScanner = new Scanner(fileText);
