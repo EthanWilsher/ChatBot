@@ -6,6 +6,7 @@ import twitter4j.*;
 import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.text.DecimalFormat;
 
 public class CTECTwitter
@@ -15,6 +16,7 @@ public class CTECTwitter
 	private List<Status> searchedTweets;
 	private List<String> tweetedWords;
 	private long totalWordCount;
+	private HashMap<String, Integer> wordsAndCount;
 	
 	public CTECTwitter(ChatbotController appController)
 	{
@@ -59,7 +61,15 @@ public class CTECTwitter
 	
 	private void removeBlanks()
 	{
-		
+	   for (int index = tweetedWords.size() - 1; index >= 0; index--)
+	   {
+		   if (tweetedWords.get(index).trim().length() == 0)
+		   {
+			   
+			   tweetedWords.remove(index);
+		   }
+	   }
+			   
 	}
 	
 	private void generateWordCount()
